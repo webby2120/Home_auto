@@ -75,10 +75,8 @@ class SnipsPlex:
 
 
 
-
-baseurl = 'http://ServerIP:32400'
-token = 'plextoken'
-plex = SnipsPlex(baseurl, token)
-
-
-plex.playTVonDeck(input("show"), 'living  room')
+if __name__ == "__main__":
+    baseurl = 'http://ServerIP:32400'
+    token = 'plextoken'
+    plex = SnipsPlex(baseurl, token)
+    plex.playTVonDeck(input("show"), 'living  room')
