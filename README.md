@@ -11,3 +11,7 @@ https://www.ebay.com.au/itm/162761149114?_trksid=p2380057.m570.l6004&_trkparms=g
 
 
 boozy is a wemos D1 esp8266 with some pumps attached to his pins
+
+
+
+to get plex to work you will need to replace plex.py in pychromcast with plex.py 
