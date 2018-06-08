@@ -15,3 +15,7 @@ boozy is a wemos D1 esp8266 with some pumps attached to his pins
 
 
 to get plex to work you will need to replace plex.py in pychromcast with plex.py 
+
+
+#todo
+fix doco and formatting :P
