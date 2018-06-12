@@ -2,7 +2,7 @@
 Controller to interface with the Plex-app.
 """
 import time
-from . import BaseController
+from pychromecast.controllers import BaseController
 
 STREAM_TYPE_UNKNOWN = "UNKNOWN"
 STREAM_TYPE_BUFFERED = "BUFFERED"
