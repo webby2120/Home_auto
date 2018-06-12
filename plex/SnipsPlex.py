@@ -1,6 +1,6 @@
 from plexapi.server import PlexServer
 from fuzzywuzzy import process
-import pychromecast.controllers.plex as px
+import plexController as px
 import pychromecast
 
 
