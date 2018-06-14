@@ -55,6 +55,7 @@ class SnipsPlex:
         for show in ondeck:
             dlist.append(show.grandparentTitle)
         return dlist
+
     def Dict_OnDeck(self):
         ddict = {}
         ondeck = self.plex.library.onDeck()
@@ -62,17 +63,26 @@ class SnipsPlex:
             ddict[show.grandparentTitle] = show
         return ddict
 
+    def Dict_Movies(self):
+        mdict = {}
+        movies = self.plex.library.section ('Movies').all ()
+        for movie in movies:
+            mdict[movie.title] = movie
+        return mdict
 
     def playTVonDeck(self, show, cast):
         sdict = self.Dict_OnDeck()
         match = process.extractOne(show, sdict.keys())
         ep = sdict[match[0]]
-        #mc = self.get_mc(cast)
-        #mc.play_media(ep.getStreamURL(), 'video/mp4')
         tv = self.setup_cc(cast)
         tv.play_media(ep, self.plex)
 
-
+    def play_movie(self, movie , cast):
+        mdict = self.Dict_Movies()
+        match = process.extractOne(movie, mdict.keys())
+        ep = mdict[match[0]]
+        tv = self.setup_cc(cast)
+        tv.play_media(ep, self.plex)
 
 
 if __name__ == "__main__":
