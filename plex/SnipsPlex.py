@@ -83,6 +83,35 @@ class SnipsPlex:
         ep = mdict[match[0]]
         tv = self.setup_cc(cast)
         tv.play_media(ep, self.plex)
+        
+        
+    def recomend_movie(self):
+        pass
+        #get top rated movie
+        
+        #ask, if no
+        
+        #get recently added movie
+        
+        #ask, if no then repeat
+        
+    def get_top_unwatched_movie(self):
+        mdict = self.Dict_Movies()
+        sort = sorted(mdict.items(), key=lambda x: x[1].rating if isinstance(x[1].rating, float) else 0,  reverse=True)
+        list = []
+        for m in sort:
+            if m[1].viewCount == 0:
+                list.append(m[0])
+        return list
+
+    def recent_unwatched_movie(self):
+        mdict = self.Dict_Movies()
+        sort = sorted(mdict.items(), key=lambda x: x[1].addedAt,  reverse=True)
+        list = []
+        for m in sort:
+            if m[1].viewCount == 0:
+                list.append(m[0])
+        return list
 
 
 if __name__ == "__main__":
