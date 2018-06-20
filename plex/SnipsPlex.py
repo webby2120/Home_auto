@@ -85,15 +85,20 @@ class SnipsPlex:
         tv.play_media(ep, self.plex)
         
         
-    def recomend_movie(self):
-        pass
-        #get top rated movie
-        
-        #ask, if no
-        
-        #get recently added movie
-        
-        #ask, if no then repeat
+    def recomend_movie(self, i):
+        if not self.top:
+            self.top = self.get_top_unwatched_movie()
+        if not self.recent:
+            self.recent = self.recent_unwatched_movie()
+
+        if i % 2 == 0:
+            if i > 0:
+                i = i / 2 - 1
+            return self.top[int(i)]
+        else:
+            i = (i + 1) / 2 - 1
+            return self.recent[int(i)]
+
         
     def get_top_unwatched_movie(self):
         mdict = self.Dict_Movies()
