@@ -10,6 +10,8 @@ class SnipsPlex:
     def __init__(self, baseurl, token):
 
         self.plex = PlexServer(baseurl, token)
+        self.top = None
+        self.recent = None
 
     def setup_cc(self, cast):
         chromecasts = pychromecast.get_chromecasts()
